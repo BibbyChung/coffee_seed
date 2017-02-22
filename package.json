@@ -1,0 +1,16 @@
+{
+  "name": "coffee_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
+    "merge-stream": "^1.0.1",
+    "rimraf": "^2.6.0",
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.3",
+    "yarn": "^0.20.3"
+  }
+}
