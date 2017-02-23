@@ -30,7 +30,7 @@ gulp.task("clean", (cb) => {
 
 
 gulp.task("compile_coffee_to_js", shell.task([
-    'coffee --compile --output dist/ src/'
+    'coffee --map --compile --output dist/ src/' 
     //'cucumber.js --format pretty'
 ]));
 
