@@ -43,3 +43,7 @@ gulp.task('build', (cb) => {
         cb
     );
 });
+
+//how to execute
+//1. run "coffee src/main.coffee"
+//2. run "nodemon src/main.coffee"
