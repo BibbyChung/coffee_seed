@@ -5,16 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Coffee",
             "type": "node",
             "request": "launch",
+            "name": "Launch Program",
             "program": "${workspaceRoot}/src/main.coffee",
             "cwd": "${workspaceRoot}",
-            "sourceMaps": true,
-            "stopOnEntry": true,
-            "smartStep": true,
             "outFiles": [
-                "${workspaceRoot}/dist/*"
+                "${workspaceRoot}/dist/**/*.js"
             ]
         },
         {
@@ -26,4 +23,3 @@
         }
     ]
 }
-

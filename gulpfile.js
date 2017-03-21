@@ -7,6 +7,9 @@ let rimraf = require("rimraf");
 let runSequence = require("run-sequence");
 let through = require('through2');
 
+var coffee = require('gulp-coffee');
+var sourcemaps = require('gulp-sourcemaps');
+
 let getCopyFilesPipe = (sourcePatten, targetPath) => {
 
     return gulp.src(sourcePatten)
@@ -28,11 +31,18 @@ gulp.task("clean", (cb) => {
 
 });
 
+gulp.task("compile_coffee_to_js", () => {
 
-gulp.task("compile_coffee_to_js", shell.task([
-    'coffee --map --compile --output dist/ src/' 
-    //'cucumber.js --format pretty'
-]));
+  return gulp.src("src/**/*.coffee")
+    .pipe(sourcemaps.init())
+    .pipe(coffee())
+    .pipe(sourcemaps.write('.', {
+      includeContent: false, 
+      sourceRoot: '../src'
+    }))
+    .pipe(gulp.dest("dist"));
+
+});
 
 gulp.task('build', (cb) => {
     runSequence(
